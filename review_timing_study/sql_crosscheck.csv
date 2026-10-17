@@ -1,0 +1,5 @@
+﻿state,orders,bad_orders
+delivered_late,1908,371
+delivered_on_time,89268,8262
+pending_overdue,7097,5749
+pending_within_promise,400,112

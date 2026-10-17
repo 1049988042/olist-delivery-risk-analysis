@@ -1,0 +1,13 @@
+{
+  "workspace": ".repro_runs/clean_env",
+  "source_copy_count": 9,
+  "scripts_copied": [
+    "audit_olist.py",
+    "run_project.py",
+    "deep_audit.py",
+    "review_timing_study.py",
+    "build_review_timing_report.py"
+  ],
+  "host_python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "venv_system_site_packages": false
+}

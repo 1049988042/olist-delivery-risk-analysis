@@ -1,0 +1,79 @@
+{
+  "groups": [
+    {
+      "state": "delivered_late",
+      "orders": 1908,
+      "bad_orders": 371,
+      "missing_final_delivery": 0,
+      "bad_rate": 0.19444444444444445,
+      "ci95_low": 0.1773072019639515,
+      "ci95_high": 0.21280959113078618,
+      "state_label": "评价时已送达，超过承诺日期"
+    },
+    {
+      "state": "delivered_on_time",
+      "orders": 89268,
+      "bad_orders": 8262,
+      "missing_final_delivery": 0,
+      "bad_rate": 0.09255276246807366,
+      "ci95_low": 0.09066915272018712,
+      "ci95_high": 0.0944714379602981,
+      "state_label": "评价时已送达，按承诺日期准时"
+    },
+    {
+      "state": "pending_overdue",
+      "orders": 7097,
+      "bad_orders": 5749,
+      "missing_final_delivery": 2667,
+      "bad_rate": 0.8100605889812597,
+      "ci95_low": 0.8007678505500615,
+      "ci95_high": 0.8190178502746006,
+      "state_label": "评价时未见送达，承诺日期已过"
+    },
+    {
+      "state": "pending_within_promise",
+      "orders": 400,
+      "bad_orders": 112,
+      "missing_final_delivery": 176,
+      "bad_rate": 0.28,
+      "ci95_low": 0.23825142339704647,
+      "ci95_high": 0.32593398611004404,
+      "state_label": "评价时未见送达，承诺日期未过"
+    }
+  ],
+  "same_day": 1373,
+  "flags": {
+    "reply_before_purchase": 60,
+    "reply_date_before_creation": 0,
+    "creation_date_before_purchase_date": 61,
+    "delivery_before_purchase": 0,
+    "promise_date_before_purchase_date": 0,
+    "strong_sequence_flag": 61
+  },
+  "landmark": [
+    {
+      "pending_at_landmark": false,
+      "eligible_orders": 4878,
+      "reviews_in_30d": 4101,
+      "bad_in_30d": 537,
+      "missing_final_delivery": 0,
+      "review_coverage_30d": 0.8407134071340714,
+      "bad_rate_among_30d_reviewers": 0.13094367227505485,
+      "bad_rate_ci95_low": 0.12096359331597055,
+      "bad_rate_ci95_high": 0.14161450370275183,
+      "observed_bad_review_incidence_30d": 0.1100861008610086
+    },
+    {
+      "pending_at_landmark": true,
+      "eligible_orders": 8248,
+      "reviews_in_30d": 7943,
+      "bad_in_30d": 5501,
+      "missing_final_delivery": 2431,
+      "review_coverage_30d": 0.9630213385063046,
+      "bad_rate_among_30d_reviewers": 0.6925594863401737,
+      "bad_rate_ci95_low": 0.6823207936613709,
+      "bad_rate_ci95_high": 0.7026120146564074,
+      "observed_bad_review_incidence_30d": 0.6669495635305529
+    }
+  ]
+}

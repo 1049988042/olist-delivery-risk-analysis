@@ -1,0 +1,6 @@
+﻿table,field,rows,nonmissing,parse_failures_nonmissing,midnight_n,midnight_fraction,nonzero_seconds_n,fractional_second_strings_n,timezone_token_n,format_yyyy_mm_dd_hh_mm_ss_n,parsed_timezone,min,max
+reviews,review_creation_date,99224,99224,0,99139,0.9991433524147384,0,0,0,99224,None,2016-10-02 00:00:00,2018-08-31 00:00:00
+reviews,review_answer_timestamp,99224,99224,0,1,1.0078206885430944e-05,97589,0,0,99224,None,2016-10-07 18:32:28,2018-10-29 12:27:35
+orders,order_delivered_customer_date,99441,96476,0,0,0.0,94907,0,0,96476,None,2016-10-11 13:46:32,2018-10-17 13:22:46
+orders,order_estimated_delivery_date,99441,99441,0,99441,1.0,0,0,0,99441,None,2016-09-30 00:00:00,2018-11-12 00:00:00
+orders,order_purchase_timestamp,99441,99441,0,1,1.0056214237588117e-05,97817,0,0,99441,None,2016-09-04 21:15:19,2018-10-17 17:30:18

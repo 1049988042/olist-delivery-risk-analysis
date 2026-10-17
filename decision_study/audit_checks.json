@@ -1,0 +1,14 @@
+{
+  "future_censoring_preserves_candidates_features_and_scores": true,
+  "feature_allowlist_enforced": true,
+  "no_status_delivery_or_review_score_in_priority_features": true,
+  "training_outcome_window_precedes_test": true,
+  "development_outcome_window_precedes_validation": true,
+  "no_order_duplicate_within_each_landmark": true,
+  "secondary_landmarks_not_pooled": true,
+  "rules_file_unchanged_after_test": true,
+  "sql_pandas_candidate_and_event_counts_match": true,
+  "independent_sql_policy_scoring_and_allocation_match": true,
+  "initial_policy_and_threshold_freeze_preserved": true,
+  "historical_files_sha256_unchanged": 93
+}

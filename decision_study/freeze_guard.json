@@ -1,0 +1,5 @@
+{
+  "frozen_rules_sha256": "35e15c3d6c906dce7a474d777f17fd10ed65dc8b94aa88097fae2bb9e52875d1",
+  "design_sha256": "f6516195419744fe7b916c97ea472f998a8738f4509ba108743de9682b22f4d9",
+  "purpose": "Freeze guard before adding independent allocation audit; no policy or threshold changes"
+}

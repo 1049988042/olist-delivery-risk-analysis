@@ -1,0 +1,250 @@
+{
+  "status": "passed",
+  "source": "publication_manifest.csv plus nine locally supplied raw CSVs",
+  "snapshot_workspace": ".repro_runs/share",
+  "private_artifacts_not_copied": [
+    "audit_results.json",
+    "audit_deps",
+    "review_timing_study/sequence_flag_evidence.csv",
+    "review_timing_study/order_timing_audit.csv.gz"
+  ],
+  "initial_failure": {
+    "command": "python -X utf8 final_delivery/verify_delivery.py",
+    "exit_code": 1,
+    "reason": "Ignore test incorrectly required deliberately omitted per-order files to exist in the enumerated file set",
+    "log": ".repro_runs/public_snapshot_logs/verify_delivery.py.stderr.txt"
+  },
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "final_delivery/verify_delivery.py"
+      ],
+      "scope": "retry only after correcting path rule assertion; analysis not rerun",
+      "exit_code": 0,
+      "elapsed_seconds": 4.673,
+      "stderr_nonempty": false
+    }
+  ],
+  "replay": {
+    "status": "passed",
+    "executed_on_client_date": "2026-10-17",
+    "isolated_venv": true,
+    "system_site_packages": false,
+    "vendored_audit_deps_copied": false,
+    "commands": [
+      {
+        "name": "pinned_install",
+        "command": [
+          "<isolated-venv-python>",
+          "-X",
+          "utf8",
+          "-m",
+          "pip",
+          "install",
+          "-r",
+          "D:\\DataAnalysis\\Olist\\.repro_runs\\share\\requirements-repro.txt",
+          "-c",
+          "D:\\DataAnalysis\\Olist\\.repro_runs\\share\\final_delivery\\environment.freeze.txt"
+        ],
+        "cwd": ".repro_runs/clean_env",
+        "exit_code": 0,
+        "elapsed_seconds": 132.36,
+        "stdout_log": ".repro_runs/clean_env/logs/pinned_install.stdout.txt",
+        "stderr_log": ".repro_runs/clean_env/logs/pinned_install.stderr.txt",
+        "stderr_nonempty": false
+      },
+      {
+        "name": "pip_check",
+        "command": [
+          "<isolated-venv-python>",
+          "-X",
+          "utf8",
+          "-m",
+          "pip",
+          "check"
+        ],
+        "cwd": ".repro_runs/clean_env",
+        "exit_code": 0,
+        "elapsed_seconds": 0.888,
+        "stdout_log": ".repro_runs/clean_env/logs/pip_check.stdout.txt",
+        "stderr_log": ".repro_runs/clean_env/logs/pip_check.stderr.txt",
+        "stderr_nonempty": false
+      },
+      {
+        "name": "pip_freeze",
+        "command": [
+          "<isolated-venv-python>",
+          "-X",
+          "utf8",
+          "-m",
+          "pip",
+          "freeze"
+        ],
+        "cwd": ".repro_runs/clean_env",
+        "exit_code": 0,
+        "elapsed_seconds": 0.666,
+        "stdout_log": ".repro_runs/clean_env/logs/pip_freeze.stdout.txt",
+        "stderr_log": ".repro_runs/clean_env/logs/pip_freeze.stderr.txt",
+        "stderr_nonempty": false
+      },
+      {
+        "name": "environment_probe",
+        "command": [
+          "<isolated-venv-python>",
+          "-X",
+          "utf8",
+          "-c",
+          "import sys,json,statsmodels;print(json.dumps({'python':sys.version,'statsmodels_file':statsmodels.__file__,'system_site_packages_used':sys.prefix==sys.base_prefix}))"
+        ],
+        "cwd": ".repro_runs/clean_env",
+        "exit_code": 0,
+        "elapsed_seconds": 0.097,
+        "stdout_log": ".repro_runs/clean_env/logs/environment_probe.stdout.txt",
+        "stderr_log": ".repro_runs/clean_env/logs/environment_probe.stderr.txt",
+        "stderr_nonempty": false
+      },
+      {
+        "name": "audit",
+        "command": [
+          "<isolated-venv-python>",
+          "-X",
+          "utf8",
+          "audit_olist.py"
+        ],
+        "cwd": ".repro_runs/clean_env",
+        "exit_code": 0,
+        "elapsed_seconds": 11.266,
+        "stdout_log": ".repro_runs/clean_env/logs/audit.stdout.txt",
+        "stderr_log": ".repro_runs/clean_env/logs/audit.stderr.txt",
+        "stderr_nonempty": false
+      },
+      {
+        "name": "baseline",
+        "command": [
+          "<isolated-venv-python>",
+          "-X",
+          "utf8",
+          "run_project.py"
+        ],
+        "cwd": ".repro_runs/clean_env",
+        "exit_code": 0,
+        "elapsed_seconds": 216.383,
+        "stdout_log": ".repro_runs/clean_env/logs/baseline.stdout.txt",
+        "stderr_log": ".repro_runs/clean_env/logs/baseline.stderr.txt",
+        "stderr_nonempty": false
+      },
+      {
+        "name": "deep",
+        "command": [
+          "<isolated-venv-python>",
+          "-X",
+          "utf8",
+          "deep_audit.py"
+        ],
+        "cwd": ".repro_runs/clean_env",
+        "exit_code": 0,
+        "elapsed_seconds": 57.469,
+        "stdout_log": ".repro_runs/clean_env/logs/deep.stdout.txt",
+        "stderr_log": ".repro_runs/clean_env/logs/deep.stderr.txt",
+        "stderr_nonempty": false
+      },
+      {
+        "name": "review_timing",
+        "command": [
+          "<isolated-venv-python>",
+          "-X",
+          "utf8",
+          "review_timing_study.py"
+        ],
+        "cwd": ".repro_runs/clean_env",
+        "exit_code": 0,
+        "elapsed_seconds": 20.641,
+        "stdout_log": ".repro_runs/clean_env/logs/review_timing.stdout.txt",
+        "stderr_log": ".repro_runs/clean_env/logs/review_timing.stderr.txt",
+        "stderr_nonempty": false
+      },
+      {
+        "name": "csv_comparison",
+        "command": [
+          "<isolated-venv-python>",
+          "-X",
+          "utf8",
+          "-c",
+          "\nfrom pathlib import Path\nimport pandas as pd,json\nroot=Path('D:\\\\DataAnalysis\\\\Olist\\\\.repro_runs\\\\share');work=Path.cwd();checked=[]\nfor directory in ['project','deep_study','review_timing_study']:\n for original in sorted((root/directory).glob('*.csv')):\n  rel=original.relative_to(root);rerun=work/rel\n  assert rerun.exists(),str(rel)\n  pd.testing.assert_frame_equal(pd.read_csv(original),pd.read_csv(rerun),check_dtype=False,check_exact=False,rtol=1e-4,atol=1e-6)\n  checked.append(str(rel).replace('\\\\','/'))\nprint(json.dumps(checked))\n"
+        ],
+        "cwd": ".repro_runs/clean_env",
+        "exit_code": 0,
+        "elapsed_seconds": 0.667,
+        "stdout_log": ".repro_runs/clean_env/logs/csv_comparison.stdout.txt",
+        "stderr_log": ".repro_runs/clean_env/logs/csv_comparison.stderr.txt",
+        "stderr_nonempty": false
+      }
+    ],
+    "comparison_rtol": 0.0001,
+    "comparison_atol": 1e-06,
+    "non_scientific_fields_not_compared": [
+      "iterations",
+      "iteration_count",
+      "score_gradient_max_abs",
+      "condition_number"
+    ],
+    "scope_limitations": [
+      "Windows/Python 3.12 only; Linux/macOS not executed",
+      "Historical hand-written baseline/deep reports are preserved, not generated by the analysis scripts",
+      "Binary-identical PNG files and font availability on other operating systems are not guaranteed",
+      "No source-system validation, experiment, or deployed monitoring system"
+    ],
+    "compared_json": [
+      "audit_results.json",
+      "project/metrics.json",
+      "deep_study/deep_metrics.json",
+      "review_timing_study/timing_metrics.json"
+    ],
+    "compared_csv": [
+      "project/categories_single.csv",
+      "project/late_groups.csv",
+      "project/monthly.csv",
+      "project/regions.csv",
+      "project/sellers_single.csv",
+      "deep_study/category_priority_strict.csv",
+      "deep_study/delay_gradient.csv",
+      "deep_study/region_priority.csv",
+      "deep_study/review_timing_cross.csv",
+      "deep_study/shipping_limit_stage.csv",
+      "deep_study/stage_by_late.csv",
+      "deep_study/state_lane_priority.csv",
+      "review_timing_study/delivery_timing_sensitivity.csv",
+      "review_timing_study/final_delivery_presence_groups.csv",
+      "review_timing_study/landmark_final_status_context.csv",
+      "review_timing_study/landmark_future_first_review_30d.csv",
+      "review_timing_study/landmark_monthly.csv",
+      "review_timing_study/missing_delivery_and_final_status.csv",
+      "review_timing_study/nonmidnight_creation_dates.csv",
+      "review_timing_study/original_final_delay_vs_review_state.csv",
+      "review_timing_study/promise_boundary_sensitivity.csv",
+      "review_timing_study/review_time_states_first.csv",
+      "review_timing_study/review_time_states_latest.csv",
+      "review_timing_study/review_time_states_original_sample.csv",
+      "review_timing_study/sequence_flag_sensitivity.csv",
+      "review_timing_study/sql_crosscheck.csv",
+      "review_timing_study/sql_landmark_crosscheck.csv",
+      "review_timing_study/survey_trigger_date_offsets.csv",
+      "review_timing_study/timestamp_precision.csv"
+    ],
+    "regenerated_figures": [
+      "project/figures/late_bad_rate.png",
+      "project/figures/monthly_rates.png",
+      "project/figures/region_late_rate.png",
+      "deep_study/delay_gradient.png",
+      "review_timing_study/review_time_states.png"
+    ],
+    "historical_files_unchanged": 64,
+    "historical_output_directories_untouched": true
+  },
+  "snapshot_local_links_checked": 102,
+  "snapshot_project_git_exists": false,
+  "no_upload_or_remote_clone_performed": true
+}

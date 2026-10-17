@@ -1,0 +1,57 @@
+# Original data: obtain separately from the publisher, never commit CSV sources.
+/olist_*_dataset.csv
+/product_category_name_translation.csv
+/data/raw/
+/data/private/
+/raw/
+
+# Local runtimes, copied data, installation and replay caches.
+/audit_deps/
+/.repro_runs/
+/.venv/
+/venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+matplotlib_cache/
+*.egg-info/
+
+# Per-order derivatives and raw anomaly examples stay local.
+/audit_results.json
+/review_timing_study/order_timing_audit.csv.gz
+/review_timing_study/sequence_flag_evidence.csv
+
+# Credentials and private configuration.
+.env
+.env.*
+!.env.example
+**/.aws/
+**/.ssh/
+**/credentials
+**/credentials.json
+**/service-account*.json
+**/secrets.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local databases, archives and editor/OS files.
+*.sqlite
+*.sqlite3
+*.db
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.log
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Deliberately keep aggregate CSV/JSON, SQL, Python, Markdown and PNG outputs.

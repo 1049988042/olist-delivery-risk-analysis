@@ -1,0 +1,84 @@
+{
+  "git": {
+    "project_repository_exists": false,
+    "detected_root": null,
+    "status_short": [],
+    "project_initialized_by_this_task": false,
+    "index_modified": false,
+    "commit_created": false,
+    "remote_pushed": false,
+    "probe_error": "fatal: not a git repository (or any of the parent directories): .git"
+  },
+  "gitignore_test_method": "git check-ignore --no-index in ignored throwaway repository, without modifying project index",
+  "original_csv_count": 9,
+  "all_original_csv_ignored": true,
+  "per_order_derivatives_ignored": [
+    "audit_results.json",
+    "review_timing_study/order_timing_audit.csv.gz",
+    "review_timing_study/sequence_flag_evidence.csv"
+  ],
+  "runtime_cache_secret_rule_examples_matched": [
+    "audit_deps/statsmodels/api.py",
+    ".repro_runs/clean_env/olist_orders_dataset.csv",
+    ".venv/pyvenv.cfg",
+    "__pycache__/example.pyc",
+    ".env",
+    "service-account-prod.json",
+    "client.pem"
+  ],
+  "candidate_file_count": 81,
+  "secret_scan_text_files": 75,
+  "credential_like_files_present_outside_runtime_dirs": [],
+  "potential_secret_signatures": [],
+  "secret_scan_limitations": "Pattern scan of proposed text files only; not a proof that no confidential content exists. No credential values printed. Raw CSVs, vendor/runtime and replay directories excluded.",
+  "files_over_10mib": [
+    {
+      "path": "olist_geolocation_dataset.csv",
+      "bytes": 61273883,
+      "ignored": true
+    },
+    {
+      "path": "olist_orders_dataset.csv",
+      "bytes": 17654914,
+      "ignored": true
+    },
+    {
+      "path": "olist_order_items_dataset.csv",
+      "bytes": 15438671,
+      "ignored": true
+    },
+    {
+      "path": "olist_order_reviews_dataset.csv",
+      "bytes": 14451670,
+      "ignored": true
+    }
+  ],
+  "local_only_runtime_cache_footprint": [
+    {
+      "directory": "audit_deps",
+      "files": 2577,
+      "bytes": 59309575,
+      "proposed_for_publication": false
+    },
+    {
+      "directory": ".repro_runs",
+      "files": 32344,
+      "bytes": 1293152216,
+      "proposed_for_publication": false
+    },
+    {
+      "directory": "__pycache__",
+      "files": 4,
+      "bytes": 92556,
+      "proposed_for_publication": false
+    }
+  ],
+  "proposed_files_over_10mib": [],
+  "already_tracked_ignored_files": [],
+  "verified_local_markdown_links": 105,
+  "broken_links": [],
+  "verified_evidence_entries": 30,
+  "historical_files_sha256_unchanged": 67,
+  "project_index_modified": false,
+  "public_release_completed": false
+}

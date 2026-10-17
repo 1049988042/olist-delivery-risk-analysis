@@ -1,0 +1,142 @@
+{
+  "source_rows": {
+    "orders": 99441,
+    "reviews": 99224,
+    "items": 112650,
+    "payments": 103886,
+    "customers": 99441,
+    "products": 32951,
+    "sellers": 3095,
+    "geo": 1000163,
+    "categories": 71
+  },
+  "order_rows": 99441,
+  "delivered": 96478,
+  "delivered_valid": 96470,
+  "delivered_missing_date": 8,
+  "canceled_with_date": 6,
+  "delivered_share_all_orders": 0.9702034372140264,
+  "valid_delivery_share_all_orders": 0.9701229875001257,
+  "reviewed_delivered": 95824,
+  "candidate_no_review": 646,
+  "late_count_all_valid": 6534,
+  "late_rate_all_valid": 0.06773090079817559,
+  "delivery_days_median": 10.217476851851853,
+  "delivery_days_p90": 23.09637731481482,
+  "carrier_days_median": 2.2014699074074073,
+  "carrier_days_missing": 1,
+  "carrier_days_negative": 165,
+  "delivery_days_negative": 0,
+  "bad12_rate_reviewed": 0.128068124895642,
+  "bad123_rate_reviewed": 0.21067790950075138,
+  "late_bad12_risk_ratio": 6.735437019537263,
+  "late_bad12_rr_ci95": [
+    6.549584573171557,
+    6.926563255627221
+  ],
+  "fisher_p": 0.0,
+  "late_bad12_odds_ratio": 16.261811351821212,
+  "multi_category_orders_reviewed": 719,
+  "multi_seller_orders_reviewed": 1261,
+  "ambiguous_score_orders_reviewed": 189,
+  "models": {
+    "main": {
+      "n": 95822,
+      "events": 12271,
+      "converged": true,
+      "iterations": 673,
+      "late_or": 16.299741706037373,
+      "late_ci95": [
+        15.361681164316485,
+        17.295084883071496
+      ],
+      "late_p": 0.0,
+      "auc_apparent": 0.7252017560626306,
+      "features": 51,
+      "condition_number": 882217.6313889651
+    },
+    "bad123": {
+      "n": 95822,
+      "events": 20187,
+      "converged": true,
+      "iterations": 695,
+      "late_or": 12.659809574203644,
+      "late_ci95": [
+        11.918336902098716,
+        13.447411310119616
+      ],
+      "late_p": 0.0,
+      "auc_apparent": 0.6734956084193147,
+      "features": 51,
+      "condition_number": 876302.8020288738
+    },
+    "unambiguous_reviews": {
+      "n": 95633,
+      "events": 12215,
+      "converged": true,
+      "iterations": 736,
+      "late_or": 16.364256999258266,
+      "late_ci95": [
+        15.421224989035535,
+        17.364956890789845
+      ],
+      "late_p": 0.0,
+      "auc_apparent": 0.7254916058906746,
+      "features": 51,
+      "condition_number": 878147.6463778345
+    },
+    "min_score": {
+      "n": 95822,
+      "events": 12309,
+      "converged": true,
+      "iterations": 661,
+      "late_or": 16.270168527407353,
+      "late_ci95": [
+        15.333843618277799,
+        17.263667903505606
+      ],
+      "late_p": 0.0,
+      "auc_apparent": 0.7253902735349188,
+      "features": 51,
+      "condition_number": 892007.3844753827
+    },
+    "max_score": {
+      "n": 95822,
+      "events": 12223,
+      "converged": true,
+      "iterations": 591,
+      "late_or": 16.312323096188244,
+      "late_ci95": [
+        15.373527275888415,
+        17.308447178011683
+      ],
+      "late_p": 0.0,
+      "auc_apparent": 0.7252996790093119,
+      "features": 51,
+      "condition_number": 881620.6181378829
+    },
+    "single_category_adjusted": {
+      "n": 93779,
+      "events": 11761,
+      "converged": true,
+      "iterations": 721,
+      "late_or": 16.629962563989665,
+      "late_ci95": [
+        15.660316628499451,
+        17.659646445232628
+      ],
+      "late_p": 0.0,
+      "auc_apparent": 0.7321595141809815,
+      "features": 66,
+      "condition_number": 913126.2283654738
+    }
+  },
+  "model_excluded_sparse_months": 2,
+  "late_rate_reviewed": 0.06659083319418935,
+  "late_rate_without_review": 0.23684210526315788,
+  "timestamp_late_rate_all_valid": 0.08112366538820359,
+  "region_rj": {
+    "n": 12211,
+    "late_n": 1456
+  }
+}

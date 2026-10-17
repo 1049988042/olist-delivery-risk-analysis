@@ -1,0 +1,16 @@
+﻿selected_orders,selected_bad_events,selected_handoff_unconfirmed,selected_final_delivered,selected_final_canceled,selected_final_unavailable,events_final_status_not_delivered,strategy,capacity_fraction,sql_pandas_match,order_by
+420,292,46,340,10,11,66,random_hash_draw,0.1,True,tie ASC
+895,619,101,705,27,30,146,random_hash_draw,0.2,True,tie ASC
+1359,912,151,1072,44,47,219,random_hash_draw,0.3,True,tie ASC
+420,300,41,316,11,9,75,oldest_purchase,0.1,True,"age_seconds DESC,tie ASC"
+895,620,86,694,25,20,150,oldest_purchase,0.2,True,"age_seconds DESC,tie ASC"
+1359,934,135,1074,38,31,213,oldest_purchase,0.3,True,"age_seconds DESC,tie ASC"
+420,342,314,136,64,77,239,stage_wait,0.1,True,"stage ASC,stage_seconds DESC,tie ASC"
+895,704,446,446,101,119,370,stage_wait,0.2,True,"stage ASC,stage_seconds DESC,tie ASC"
+1359,1005,488,821,114,131,433,stage_wait,0.3,True,"stage ASC,stage_seconds DESC,tie ASC"
+420,342,314,139,65,88,238,four_cell,0.1,True,"base_score DESC,stage_seconds DESC,tie ASC"
+895,704,446,451,101,126,365,four_cell,0.2,True,"base_score DESC,stage_seconds DESC,tie ASC"
+1359,1003,488,823,115,136,430,four_cell,0.3,True,"base_score DESC,stage_seconds DESC,tie ASC"
+420,340,314,141,65,89,234,geo_four_cell,0.1,True,"geo_score DESC,stage_seconds DESC,tie ASC"
+895,712,446,448,102,125,367,geo_four_cell,0.2,True,"geo_score DESC,stage_seconds DESC,tie ASC"
+1359,1036,488,817,115,136,436,geo_four_cell,0.3,True,"geo_score DESC,stage_seconds DESC,tie ASC"

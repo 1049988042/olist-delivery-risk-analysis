@@ -1,0 +1,10 @@
+﻿pending_at_landmark,order_status,eligible_orders,reviews_in_30d,bad_in_30d
+False,delivered,4878,4101,537
+True,approved,2,2,1
+True,canceled,415,397,316
+True,created,5,3,2
+True,delivered,5818,5645,3651
+True,invoiced,252,244,205
+True,processing,295,288,270
+True,shipped,896,825,590
+True,unavailable,565,539,466

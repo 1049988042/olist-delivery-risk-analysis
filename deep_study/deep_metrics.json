@@ -1,0 +1,178 @@
+{
+  "category_null": {
+    "mixed_null_orders_all": 59,
+    "mixed_null_valid_delivery": 57,
+    "mixed_null_reviewed": 55,
+    "old_single_category_reviewed": 93781,
+    "strict_single_category_reviewed": 93726
+  },
+  "timing": {
+    "negative_carrier_valid_delivery": 165,
+    "missing_carrier_valid_delivery": 1,
+    "negative_transit_valid_delivery": 23,
+    "valid_stage_n": 96281,
+    "valid_carrier_median": 2.2047916666666665,
+    "valid_carrier_p90": 6.4025694444444445,
+    "valid_transit_median": 7.100752314814815,
+    "valid_transit_p90": 18.907534722222223,
+    "review_answer_before_delivery": 4653,
+    "review_creation_before_delivery": 8140,
+    "timing_clean_model_n": 91170,
+    "timing_clean_late_or": 2.4000807545507956,
+    "timing_clean_late_ci95": [
+      2.1305299045771426,
+      2.7037346981094874
+    ]
+  },
+  "model_audit": {
+    "n": 95822,
+    "events": 12271,
+    "unique_customers": 92746,
+    "statsmodels_converged": true,
+    "iteration_count": 6,
+    "score_gradient_max_abs": 3.297637718446822e-10,
+    "main": {
+      "beta": 2.7911353026397396,
+      "se": 0.030241336722254833,
+      "or": 16.29951418292044,
+      "ci95": [
+        15.361467794075338,
+        17.29484227423181
+      ],
+      "z": 92.29536803463193,
+      "p": 0.0
+    },
+    "cluster_customer": {
+      "beta": 2.7911353026397396,
+      "se": 0.03030672110048707,
+      "or": 16.29951418292044,
+      "ci95": [
+        15.359499296172778,
+        17.29705880877408
+      ],
+      "z": 92.09624800338042,
+      "p": 0.0
+    },
+    "old_scipy": {
+      "n": 95822,
+      "events": 12271,
+      "converged": true,
+      "iterations": 673,
+      "late_or": 16.299741706037373,
+      "late_ci95": [
+        15.361681164316485,
+        17.295084883071496
+      ],
+      "late_p": 0.0,
+      "auc_apparent": 0.7252017560626306,
+      "features": 51,
+      "condition_number": 882217.6313889651
+    },
+    "or_difference": -0.00022752311693352567,
+    "se_ratio_cluster_to_classic": 1.002162086247468
+  },
+  "adjusted_delay_gradient": {
+    "delay_提前≥1天": {
+      "beta": -0.38025986163758324,
+      "se": 0.0880419434169104,
+      "or": 0.6836837229545988,
+      "ci95": [
+        0.5753239124837067,
+        0.8124526425734098
+      ],
+      "z": -4.319076191184416,
+      "p": 1.566836867054535e-05
+    },
+    "delay_延迟1天": {
+      "beta": 0.4992247696906609,
+      "se": 0.1252622028761061,
+      "or": 1.6474436272973612,
+      "ci95": [
+        1.2887990967743055,
+        2.105891067052769
+      ],
+      "z": 3.9854382106343156,
+      "p": 6.73557037803506e-05
+    },
+    "delay_延迟2–3天": {
+      "beta": 1.642354686222916,
+      "se": 0.10847802834286911,
+      "or": 5.167322621626271,
+      "ci95": [
+        4.177603474545475,
+        6.391516868143093
+      ],
+      "z": 15.139975452281323,
+      "p": 8.82466334358054e-52
+    },
+    "delay_延迟4–7天": {
+      "beta": 2.6953212127274653,
+      "se": 0.10128342613277783,
+      "or": 14.810275238228861,
+      "ci95": [
+        12.143641476206728,
+        18.062477639994594
+      ],
+      "z": 26.61167098745283,
+      "p": 4.973927581488972e-156
+    },
+    "delay_延迟8–14天": {
+      "beta": 3.3213286652890264,
+      "se": 0.10991094829078975,
+      "or": 27.697126332122906,
+      "ci95": [
+        22.32937791243945,
+        34.355225213426834
+      ],
+      "z": 30.21836056315188,
+      "p": 1.3593788255264838e-200
+    },
+    "delay_延迟≥15天": {
+      "beta": 3.145461776745992,
+      "se": 0.11050635078284904,
+      "or": 23.230400255504335,
+      "ci95": [
+        18.70646767827938,
+        28.848391118625827
+      ],
+      "z": 28.464081516246925,
+      "p": 3.262564204860763e-178
+    }
+  },
+  "last_two_delay_bins_difference_p": 0.06274824940153317,
+  "gradient_model_converged": true,
+  "gradient_cluster_model_converged": true,
+  "creation_after_delivery_model": {
+    "n": 87683,
+    "late_or": 2.2175848111715304,
+    "late_ci95": [
+      1.885366417008894,
+      2.60834305224366
+    ]
+  },
+  "strict_category_model": {
+    "n": 93724,
+    "late_or": 16.64708738867773,
+    "late_ci95": [
+      15.676010662761502,
+      17.678319088196787
+    ],
+    "converged": true,
+    "old_single_category_or": 16.629962563989665
+  },
+  "time_holdout": {
+    "train_n": 43360,
+    "test_n": 52462,
+    "train_end": "2017-12",
+    "test_start": "2018-01",
+    "test_end": "2018-08",
+    "test_auc": 0.7337736749575258,
+    "test_brier": 0.09298278912164101,
+    "test_event_rate": 0.1336967709961496,
+    "test_pred_mean": 0.13158524151372483
+  },
+  "multi_seller_valid_delivery": 1275,
+  "multi_category_or_null_valid_delivery": 2112,
+  "after_all_item_shipping_limits": 8696,
+  "limit_known_stage_n": 96281
+}

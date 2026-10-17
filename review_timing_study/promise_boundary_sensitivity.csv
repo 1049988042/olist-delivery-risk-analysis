@@ -1,0 +1,11 @@
+﻿scenario,state,orders,bad_orders,missing_final_delivery,bad_rate,ci95_low,ci95_high,state_label
+promise_date_ambiguous,delivered_late,1908,371,0,0.19444444444444445,0.1773072019639515,0.21280959113078618,评价时已送达，超过承诺日期
+promise_date_ambiguous,delivered_on_time,89268,8262,0,0.09255276246807366,0.09066915272018712,0.0944714379602981,评价时已送达，按承诺日期准时
+promise_date_ambiguous,pending_overdue,7097,5749,2667,0.8100605889812597,0.8007678505500615,0.8190178502746006,评价时未见送达，承诺日期已过
+promise_date_ambiguous,pending_within_promise,392,111,171,0.28316326530612246,0.2408347722697669,0.3297003593799839,评价时未见送达，承诺日期未过
+promise_date_ambiguous,promise_boundary_ambiguous,8,1,5,0.125,0.02241749145005667,0.4708881822128535,承诺日期边界附近，时点不确定
+deadline_plus_minus_12h_ambiguous,delivered_late,1908,371,0,0.19444444444444445,0.1773072019639515,0.21280959113078618,评价时已送达，超过承诺日期
+deadline_plus_minus_12h_ambiguous,delivered_on_time,89268,8262,0,0.09255276246807366,0.09066915272018712,0.0944714379602981,评价时已送达，按承诺日期准时
+deadline_plus_minus_12h_ambiguous,pending_overdue,7000,5666,2646,0.8094285714285714,0.8000591914448674,0.818458521366042,评价时未见送达，承诺日期已过
+deadline_plus_minus_12h_ambiguous,pending_within_promise,395,112,172,0.28354430379746837,0.24134632301261738,0.3299118894469957,评价时未见送达，承诺日期未过
+deadline_plus_minus_12h_ambiguous,promise_boundary_ambiguous,102,83,25,0.8137254901960784,0.7272987815303736,0.8773792030051789,承诺日期边界附近，时点不确定

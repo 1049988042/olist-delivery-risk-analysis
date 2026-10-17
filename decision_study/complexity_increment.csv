@@ -1,0 +1,7 @@
+﻿capacity_fraction,strategy,comparator,additional_observed_events,recall_gain_pp,ci95_low_pp,ci95_high_pp,status
+0.1,geo_four_cell,stage_wait,-2.0,-0.06335128286347799,-0.3893416008919767,0.2051048890203423,descriptive_complexity_audit_not_used_to_retune
+0.1,geo_four_cell,four_cell,-2.0,-0.06335128286347799,-0.21361057616775597,0.05183636796664783,descriptive_complexity_audit_not_used_to_retune
+0.2,geo_four_cell,stage_wait,8.0,0.25340513145391197,-0.24121101607510245,0.7015646484582456,descriptive_complexity_audit_not_used_to_retune
+0.2,geo_four_cell,four_cell,8.0,0.25340513145391197,-0.16161488906745844,0.6621172847607617,descriptive_complexity_audit_not_used_to_retune
+0.3,geo_four_cell,stage_wait,31.0,0.9819448843839088,0.2330597643097643,1.6036511675996976,descriptive_complexity_audit_not_used_to_retune
+0.3,geo_four_cell,four_cell,33.0,1.0452961672473868,0.3619794989579346,1.6255144659707834,descriptive_complexity_audit_not_used_to_retune

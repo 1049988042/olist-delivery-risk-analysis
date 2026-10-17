@@ -1,0 +1,31 @@
+﻿key,title,value,code,line,code_anchor,output,selector,denominator,formula,notes
+raw_orders,原始订单,99441,run_project.py,38,assert len(df)==len(data,project/metrics.json,order_rows,99441,COUNT(orders.order_id)，order_id唯一,audit_results.json亦核对原始表行数
+delivered_status,快照delivered订单,96478,run_project.py,97,'delivered':int,project/metrics.json,delivered,99441,order_status=delivered的订单数,97.02%是快照已送达占比，不是成熟队列最终履约率
+valid_delivery,用于日期配送分析的有效送达,96470,run_project.py,43,df['delivered_valid'],project/metrics.json,delivered_valid,96478,delivered且实际送达时间非空：96478-8,不保证所有其他时间顺序有效
+reviewed_valid_delivery,有评价的有效送达,95824,run_project.py,50,q=df[df.delivered_valid],project/metrics.json,reviewed_delivered,96470,96470-646无评价订单,每单最晚回复评分；非全平台客户样本
+late_count,超承诺日期送达订单,6534,run_project.py,45,df['late']=,project/metrics.json,late_count_all_valid,96470,实际送达日>承诺日,
+late_rate,有效送达订单延迟率,0.06773090079817559,run_project.py,45,df['late']=,project/metrics.json,late_rate_all_valid,96470,6534/96470,
+late_bad_rate,延迟有评价订单差评率,0.6241968343519825,run_project.py,62,"late=group(a,'late')",project/late_groups.csv,late=true;bad_n/n,6381,3983/6381,1–2星，每单最晚回复；最终配送结果的回顾性关联
+ontime_bad_rate,未延迟有评价订单差评率,0.09267354628087161,run_project.py,62,"late=group(a,'late')",project/late_groups.csv,late=false;bad_n/n,89443,8289/89443,1–2星，每单最晚回复；最终配送结果的回顾性关联
+crude_rr,未调整差评风险比,6.735437019537263,run_project.py,95,two=stats.contingency.relative_risk,project/metrics.json,late_bad12_risk_ratio,95824,(3983/6381)/(8289/89443),95% CI见late_bad12_rr_ci95；不等于调整OR
+model_n,主回归样本,95822,deep_audit.py,68,eligible=a.purchase_month.value_counts(),deep_study/deep_metrics.json,model_audit.n,95824,95824-2个稀疏月份订单,保留缺失/排除原因；n=95822
+adjusted_or,statsmodels调整延迟OR,16.29951418292044,deep_audit.py,78,"model=sm.GLM(y,X",deep_study/deep_metrics.json,model_audit.main,95822,exp(beta_late),控制州、月份、log1p商品金额/运费/件数；观察性关联
+cluster_se,用户聚类稳健SE,0.03030672110048707,deep_audit.py,79,cluster=sm.GLM,deep_study/deep_metrics.json,model_audit.cluster_customer.se,92746,按customer_unique_id聚类的SE,样本95822订单；92746用户；非因果校正
+strict_category_null_affected,旧单品类误判影响订单,55,deep_audit.py,41,d['mixed_null_category'],deep_study/deep_metrics.json,category_null.mixed_null_reviewed,93781,非空类目数=1且存在NULL商品类目的有评价订单,55单；旧单品类样本93781改为93726
+valid_stage,阶段耗时有效订单,96281,deep_audit.py,118,stage['valid_carrier']=,deep_study/deep_metrics.json,timing.valid_stage_n,96470,排除165负交接、23负运输、1缺交接，共189,仅排除于阶段时长指标，保留原始记录
+all_reviewed_orders,全体有评价订单,98673,review_timing_study.py,97,latest = select_reviews('latest'),review_timing_study/timing_metrics.json,selected_latest_orders,99441,每单最后一次评价；包括最终未送达/取消,不同于基础有评价已送达95824
+state_delivered_late,评价时已送达，超过承诺日期差评率,0.19444444444444445,review_timing_study.py,101,def classify(frame,review_timing_study/review_time_states_latest.csv,state=delivered_late,1908,371/1908,全部有评价订单；事件时间代理，非入库时点；Wilson区间见输出
+state_delivered_on_time,评价时已送达，按承诺日期准时差评率,0.09255276246807366,review_timing_study.py,101,def classify(frame,review_timing_study/review_time_states_latest.csv,state=delivered_on_time,89268,8262/89268,全部有评价订单；事件时间代理，非入库时点；Wilson区间见输出
+state_pending_overdue,评价时未见送达，承诺日期已过差评率,0.8100605889812597,review_timing_study.py,101,def classify(frame,review_timing_study/review_time_states_latest.csv,state=pending_overdue,7097,5749/7097,全部有评价订单；事件时间代理，非入库时点；Wilson区间见输出
+state_pending_within_promise,评价时未见送达，承诺日期未过差评率,0.28,review_timing_study.py,101,def classify(frame,review_timing_study/review_time_states_latest.csv,state=pending_within_promise,400,112/400,全部有评价订单；事件时间代理，非入库时点；Wilson区间见输出
+sequence_flags,明显评价时间矛盾订单,61,review_timing_study.py,94,result['strong_sequence_flag'],review_timing_study/timing_metrics.json,sequence_flags.strong_sequence_flag,98673,下单前回复或创建日早于下单日等标记取并集,61单；不能把所有收货前评价当作异常
+same_day,评价和送达同日订单,1373,review_timing_study.py,187,same_day = latest,review_timing_study/timing_metrics.json,same_calendar_day_answer_delivery,98673,评价回复日=送达日,414笔作答在前；959笔在后或同时；另有窗口敏感性
+landmark_n,承诺节点候选订单,13126,review_timing_study.py,193,eligible = (,review_timing_study/timing_metrics.json,landmark_cohort.eligible_orders,13126,8248未见送达+4878已送达,购买>=2017-01-01；承诺日2017-01-01至2018-06-30；节点已下单且无更早首次评价
+landmark_candidates_true,节点未见送达候选数,8248,review_timing_study.py,199,land['pending_at_landmark'],review_timing_study/landmark_future_first_review_30d.csv,pending_at_landmark=true;eligible_orders,13126,按记录送达时间是否晚于承诺次日零时分组,无送达时间亦属未见送达；无法排除当时已取消
+future_review_coverage_true,节点未见送达后续30天评价覆盖率,0.9630213385063046,review_timing_study.py,200,land['review_in_30d'],review_timing_study/landmark_future_first_review_30d.csv,pending_at_landmark=true;reviews_in_30d/eligible_orders,8248,7943/8248,"首次评价；区间[节点,节点+30天)"
+future_bad_rate_true,节点未见送达后续30天评价者差评率,0.6925594863401737,review_timing_study.py,201,land['bad_in_30d'],review_timing_study/landmark_future_first_review_30d.csv,pending_at_landmark=true;bad_in_30d/reviews_in_30d,7943,5501/7943,69.26%与13.09%的分母是评价者，不是候选订单
+future_observed_event_true,节点未见送达观察到首次差评事件比例,0.6669495635305529,review_timing_study.py,205,landmark['observed_bad_review_incidence_30d'],review_timing_study/landmark_future_first_review_30d.csv,pending_at_landmark=true;bad_in_30d/eligible_orders,8248,5501/8248,未评价不是好评；此为观察到事件比例而非潜在不满意率
+landmark_candidates_false,节点已送达候选数,4878,review_timing_study.py,199,land['pending_at_landmark'],review_timing_study/landmark_future_first_review_30d.csv,pending_at_landmark=false;eligible_orders,13126,按记录送达时间是否晚于承诺次日零时分组,无送达时间亦属未见送达；无法排除当时已取消
+future_review_coverage_false,节点已送达后续30天评价覆盖率,0.8407134071340714,review_timing_study.py,200,land['review_in_30d'],review_timing_study/landmark_future_first_review_30d.csv,pending_at_landmark=false;reviews_in_30d/eligible_orders,4878,4101/4878,"首次评价；区间[节点,节点+30天)"
+future_bad_rate_false,节点已送达后续30天评价者差评率,0.13094367227505485,review_timing_study.py,201,land['bad_in_30d'],review_timing_study/landmark_future_first_review_30d.csv,pending_at_landmark=false;bad_in_30d/reviews_in_30d,4101,537/4101,69.26%与13.09%的分母是评价者，不是候选订单
+future_observed_event_false,节点已送达观察到首次差评事件比例,0.1100861008610086,review_timing_study.py,205,landmark['observed_bad_review_incidence_30d'],review_timing_study/landmark_future_first_review_30d.csv,pending_at_landmark=false;bad_in_30d/eligible_orders,4878,537/4878,未评价不是好评；此为观察到事件比例而非潜在不满意率

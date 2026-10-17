@@ -1,0 +1,122 @@
+{
+  "design_sha256": "f6516195419744fe7b916c97ea472f998a8738f4509ba108743de9682b22f4d9",
+  "chosen_on_validation": "geo_four_cell",
+  "selection_period": [
+    "2017-08-01",
+    "2017-10-31"
+  ],
+  "development_rules": {
+    "quantile": 0.75,
+    "geo_minimum": 100,
+    "training_n": 990,
+    "training_start": "2017-02-08 00:00:00",
+    "training_end": "2017-06-30 00:00:00",
+    "training_label_window_end": "2017-07-30 00:00:00",
+    "prior_event_rate": 0.6646464646464646,
+    "thresholds_days": {
+      "False": 35.70622974537037,
+      "True": 27.600755208333336
+    },
+    "cells": {
+      "handoff_unconfirmed|long": {
+        "n": 103,
+        "events": 86,
+        "score": 0.7792962302766224
+      },
+      "handoff_unconfirmed|short": {
+        "n": 309,
+        "events": 242,
+        "score": 0.7666638530148279
+      },
+      "in_transit|long": {
+        "n": 145,
+        "events": 91,
+        "score": 0.6370888370888371
+      },
+      "in_transit|short": {
+        "n": 433,
+        "events": 239,
+        "score": 0.5636279984106071
+      }
+    },
+    "supported_geo_cells": {
+      "handoff_unconfirmed|short|SP": {
+        "n": 149,
+        "events": 117,
+        "score": 0.7777766477971196
+      },
+      "in_transit|short|SP": {
+        "n": 203,
+        "events": 107,
+        "score": 0.5391511545909594
+      }
+    }
+  },
+  "final_training_rules": {
+    "quantile": 0.75,
+    "geo_minimum": 100,
+    "training_n": 2017,
+    "training_start": "2017-02-08 00:00:00",
+    "training_end": "2017-10-31 00:00:00",
+    "training_label_window_end": "2017-11-30 00:00:00",
+    "prior_event_rate": 0.6534457114526524,
+    "thresholds_days": {
+      "False": 32.186021412037036,
+      "True": 26.38146412037037
+    },
+    "cells": {
+      "handoff_unconfirmed|long": {
+        "n": 200,
+        "events": 158,
+        "score": 0.7626891422905305
+      },
+      "handoff_unconfirmed|short": {
+        "n": 598,
+        "events": 476,
+        "score": 0.7849880950194948
+      },
+      "in_transit|long": {
+        "n": 305,
+        "events": 196,
+        "score": 0.6441472833031905
+      },
+      "in_transit|short": {
+        "n": 914,
+        "events": 488,
+        "score": 0.5401164788097849
+      }
+    },
+    "supported_geo_cells": {
+      "handoff_unconfirmed|short|SP": {
+        "n": 320,
+        "events": 251,
+        "score": 0.7845209750046417
+      },
+      "in_transit|short|RJ": {
+        "n": 182,
+        "events": 109,
+        "score": 0.5780554889396401
+      },
+      "in_transit|short|SP": {
+        "n": 391,
+        "events": 205,
+        "score": 0.5275186311221558
+      }
+    }
+  },
+  "feature_allowlist": [
+    "order_id",
+    "decision_time",
+    "day",
+    "week",
+    "customer_state",
+    "order_age_days",
+    "handoff_observed",
+    "stage_age_days",
+    "item_value",
+    "freight",
+    "item_count",
+    "seller_count"
+  ],
+  "excludes_final_status_and_delivery_and_outcomes": true
+}

@@ -1,0 +1,264 @@
+{
+  "selected_latest_orders": 98673,
+  "selected_first_orders": 98673,
+  "source_review_events": 99224,
+  "final_delivery_missing_latest_orders": 2843,
+  "time_zone_evidence": "All inspected nonmissing values are timezone-naive; actual timezone and cross-system clock consistency are unverified. No timezone conversion applied.",
+  "date_precision_evidence": [
+    {
+      "table": "reviews",
+      "field": "review_creation_date",
+      "rows": 99224,
+      "nonmissing": 99224,
+      "parse_failures_nonmissing": 0,
+      "midnight_n": 99139,
+      "midnight_fraction": 0.9991433524147384,
+      "nonzero_seconds_n": 0,
+      "fractional_second_strings_n": 0,
+      "timezone_token_n": 0,
+      "format_yyyy_mm_dd_hh_mm_ss_n": 99224,
+      "parsed_timezone": "None",
+      "min": "2016-10-02 00:00:00",
+      "max": "2018-08-31 00:00:00"
+    },
+    {
+      "table": "reviews",
+      "field": "review_answer_timestamp",
+      "rows": 99224,
+      "nonmissing": 99224,
+      "parse_failures_nonmissing": 0,
+      "midnight_n": 1,
+      "midnight_fraction": 1.0078206885430944e-05,
+      "nonzero_seconds_n": 97589,
+      "fractional_second_strings_n": 0,
+      "timezone_token_n": 0,
+      "format_yyyy_mm_dd_hh_mm_ss_n": 99224,
+      "parsed_timezone": "None",
+      "min": "2016-10-07 18:32:28",
+      "max": "2018-10-29 12:27:35"
+    },
+    {
+      "table": "orders",
+      "field": "order_delivered_customer_date",
+      "rows": 99441,
+      "nonmissing": 96476,
+      "parse_failures_nonmissing": 0,
+      "midnight_n": 0,
+      "midnight_fraction": 0.0,
+      "nonzero_seconds_n": 94907,
+      "fractional_second_strings_n": 0,
+      "timezone_token_n": 0,
+      "format_yyyy_mm_dd_hh_mm_ss_n": 96476,
+      "parsed_timezone": "None",
+      "min": "2016-10-11 13:46:32",
+      "max": "2018-10-17 13:22:46"
+    },
+    {
+      "table": "orders",
+      "field": "order_estimated_delivery_date",
+      "rows": 99441,
+      "nonmissing": 99441,
+      "parse_failures_nonmissing": 0,
+      "midnight_n": 99441,
+      "midnight_fraction": 1.0,
+      "nonzero_seconds_n": 0,
+      "fractional_second_strings_n": 0,
+      "timezone_token_n": 0,
+      "format_yyyy_mm_dd_hh_mm_ss_n": 99441,
+      "parsed_timezone": "None",
+      "min": "2016-09-30 00:00:00",
+      "max": "2018-11-12 00:00:00"
+    },
+    {
+      "table": "orders",
+      "field": "order_purchase_timestamp",
+      "rows": 99441,
+      "nonmissing": 99441,
+      "parse_failures_nonmissing": 0,
+      "midnight_n": 1,
+      "midnight_fraction": 1.0056214237588117e-05,
+      "nonzero_seconds_n": 97817,
+      "fractional_second_strings_n": 0,
+      "timezone_token_n": 0,
+      "format_yyyy_mm_dd_hh_mm_ss_n": 99441,
+      "parsed_timezone": "None",
+      "min": "2016-09-04 21:15:19",
+      "max": "2018-10-17 17:30:18"
+    }
+  ],
+  "main_groups": [
+    {
+      "state": "delivered_late",
+      "orders": 1908,
+      "bad_orders": 371,
+      "missing_final_delivery": 0,
+      "bad_rate": 0.19444444444444445,
+      "ci95_low": 0.1773072019639515,
+      "ci95_high": 0.21280959113078618,
+      "state_label": "评价时已送达，超过承诺日期"
+    },
+    {
+      "state": "delivered_on_time",
+      "orders": 89268,
+      "bad_orders": 8262,
+      "missing_final_delivery": 0,
+      "bad_rate": 0.09255276246807366,
+      "ci95_low": 0.09066915272018712,
+      "ci95_high": 0.0944714379602981,
+      "state_label": "评价时已送达，按承诺日期准时"
+    },
+    {
+      "state": "pending_overdue",
+      "orders": 7097,
+      "bad_orders": 5749,
+      "missing_final_delivery": 2667,
+      "bad_rate": 0.8100605889812597,
+      "ci95_low": 0.8007678505500615,
+      "ci95_high": 0.8190178502746006,
+      "state_label": "评价时未见送达，承诺日期已过"
+    },
+    {
+      "state": "pending_within_promise",
+      "orders": 400,
+      "bad_orders": 112,
+      "missing_final_delivery": 176,
+      "bad_rate": 0.28,
+      "ci95_low": 0.23825142339704647,
+      "ci95_high": 0.32593398611004404,
+      "state_label": "评价时未见送达，承诺日期未过"
+    }
+  ],
+  "original_sample_groups": [
+    {
+      "state": "delivered_late",
+      "orders": 1908,
+      "bad_orders": 371,
+      "missing_final_delivery": 0,
+      "bad_rate": 0.19444444444444445,
+      "ci95_low": 0.1773072019639515,
+      "ci95_high": 0.21280959113078618,
+      "state_label": "评价时已送达，超过承诺日期"
+    },
+    {
+      "state": "delivered_on_time",
+      "orders": 89263,
+      "bad_orders": 8258,
+      "missing_final_delivery": 0,
+      "bad_rate": 0.09251313534163091,
+      "ci95_low": 0.0906298405339746,
+      "ci95_high": 0.09443150126830474,
+      "state_label": "评价时已送达，按承诺日期准时"
+    },
+    {
+      "state": "pending_overdue",
+      "orders": 4429,
+      "bad_orders": 3600,
+      "missing_final_delivery": 0,
+      "bad_rate": 0.8128245653646421,
+      "ci95_low": 0.8010679500482081,
+      "ci95_high": 0.8240389990140289,
+      "state_label": "评价时未见送达，承诺日期已过"
+    },
+    {
+      "state": "pending_within_promise",
+      "orders": 224,
+      "bad_orders": 43,
+      "missing_final_delivery": 0,
+      "bad_rate": 0.19196428571428573,
+      "ci95_low": 0.14575520875519363,
+      "ci95_high": 0.2485604670911292,
+      "state_label": "评价时未见送达，承诺日期未过"
+    }
+  ],
+  "same_calendar_day_answer_delivery": 1373,
+  "same_day_answer_before_delivery": 414,
+  "same_day_answer_at_or_after_delivery": 959,
+  "answer_before_delivery_latest_all": 4654,
+  "creation_timestamp_before_delivery": 8141,
+  "creation_calendar_date_before_delivery_date": 4977,
+  "creation_same_calendar_date_as_delivery": 3164,
+  "creation_before_min_delivery_or_promise_date": 458,
+  "creation_on_min_delivery_or_promise_date": 2592,
+  "creation_one_day_after_min_delivery_or_promise_date": 84695,
+  "sequence_flags": {
+    "reply_before_purchase": 60,
+    "reply_date_before_creation": 0,
+    "creation_date_before_purchase_date": 61,
+    "delivery_before_purchase": 0,
+    "promise_date_before_purchase_date": 0,
+    "strong_sequence_flag": 61
+  },
+  "all_events_reply_before_purchase": 63,
+  "all_events_reply_date_before_creation": 0,
+  "landmark_cohort": {
+    "eligible_orders": 13126,
+    "strong_sequence_flag_orders": 0,
+    "purchase_start": "2017-01-01",
+    "promise_date_start": "2017-01-01",
+    "promise_date_end": "2018-06-30",
+    "follow_up_days": 30,
+    "extraction_time_known": false,
+    "outcome": "first review only; excludes any first review before landmark; no review is not counted as positive satisfaction"
+  },
+  "landmark_groups": [
+    {
+      "pending_at_landmark": false,
+      "eligible_orders": 4878,
+      "reviews_in_30d": 4101,
+      "bad_in_30d": 537,
+      "missing_final_delivery": 0,
+      "review_coverage_30d": 0.8407134071340714,
+      "bad_rate_among_30d_reviewers": 0.13094367227505485,
+      "bad_rate_ci95_low": 0.12096359331597055,
+      "bad_rate_ci95_high": 0.14161450370275183,
+      "observed_bad_review_incidence_30d": 0.1100861008610086
+    },
+    {
+      "pending_at_landmark": true,
+      "eligible_orders": 8248,
+      "reviews_in_30d": 7943,
+      "bad_in_30d": 5501,
+      "missing_final_delivery": 2431,
+      "review_coverage_30d": 0.9630213385063046,
+      "bad_rate_among_30d_reviewers": 0.6925594863401737,
+      "bad_rate_ci95_low": 0.6823207936613709,
+      "bad_rate_ci95_high": 0.7026120146564074,
+      "observed_bad_review_incidence_30d": 0.6669495635305529
+    }
+  ],
+  "source_description_url": "https://www.kaggle.com/olistbr/brazilian-ecommerce/home/",
+  "source_description_checked_on": "2026-10-17",
+  "source_description_paraphrase": "The publisher describes email survey sending after receipt or when estimated delivery is due. Exact timezone and ingestion timestamps are not provided in the local files.",
+  "original_sample_final_delay_vs_state": [
+    {
+      "state": "delivered_late",
+      "final_late": true,
+      "orders": 1908,
+      "bad_orders": 371
+    },
+    {
+      "state": "delivered_on_time",
+      "final_late": false,
+      "orders": 89263,
+      "bad_orders": 8258
+    },
+    {
+      "state": "pending_overdue",
+      "final_late": true,
+      "orders": 4429,
+      "bad_orders": 3600
+    },
+    {
+      "state": "pending_within_promise",
+      "final_late": false,
+      "orders": 180,
+      "bad_orders": 31
+    },
+    {
+      "state": "pending_within_promise",
+      "final_late": true,
+      "orders": 44,
+      "bad_orders": 12
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "git": {
+    "repository_exists": false,
+    "root": null,
+    "status": [],
+    "probe_error": "fatal: not a git repository (or any of the parent directories): .git",
+    "ignore_check_method": "Existing ignored probe Git metadata, project work-tree; no Git initialization or index writes",
+    "initialized": false,
+    "index_modified": false,
+    "commit_created": false,
+    "pushed": false
+  },
+  "original_csv_count": 9,
+  "original_csv_ignored": true,
+  "ignore_examples_matched": [
+    "decision_study/.matplotlib_cache/fontlist.json",
+    "portfolio_delivery/.matplotlib_cache/fontlist.json",
+    ".repro_runs/any/.venv/pyvenv.cfg",
+    ".env",
+    "config.env",
+    "secrets.yaml",
+    "service-account-prod.json",
+    "client.pem",
+    "data/raw/orders.csv"
+  ],
+  "historical_files_unchanged": 119,
+  "authorized_changed_files": [
+    {
+      "path": ".gitignore",
+      "before_sha256": "b20f2f70225aa8ae795b2d2740ef3ed949d4b3ae1ac5c7a4db4aa30219f75f70",
+      "after_sha256": "418f1d5dc13d5ea4a6183b115b13cd2eeb5138d2876de3a491f287b5be6fe596"
+    },
+    {
+      "path": "README.md",
+      "before_sha256": "8dc8383f8f62ffc86d663c0dad6ec242d3402ca7e509807281ec7c7e0dba3bea",
+      "after_sha256": "baa2ab8e5fa07a4f8bbf1c2effc14ba4e75614e765335e18ab6d1de8af0f5f9a"
+    }
+  ],
+  "proposed_file_count": 128,
+  "secret_scan_text_files": 120,
+  "secret_signature_hits": [],
+  "credential_like_files_outside_runtime": [],
+  "order_customer_review_id_csvs_proposed": [],
+  "scan_limits": "Pattern checks on proposed text files, no semantic guarantee; raw data and runtime excluded. Anonymous seller ranking IDs may remain in historical aggregate tables.",
+  "files_over_10mib": [
+    {
+      "path": "olist_geolocation_dataset.csv",
+      "bytes": 61273883,
+      "ignored": true
+    },
+    {
+      "path": "olist_order_items_dataset.csv",
+      "bytes": 15438671,
+      "ignored": true
+    },
+    {
+      "path": "olist_order_reviews_dataset.csv",
+      "bytes": 14451670,
+      "ignored": true
+    },
+    {
+      "path": "olist_orders_dataset.csv",
+      "bytes": 17654914,
+      "ignored": true
+    }
+  ],
+  "proposed_files_over_10mib": [],
+  "new_document_local_links_checked": 149,
+  "broken_links": [],
+  "links_to_ignored_files": [],
+  "evidence_entries_checked": 40,
+  "legacy_evidence_preserved": 30,
+  "reproduction_status": "passed",
+  "license_verified_from_publisher": "CC BY-NC-SA 4.0",
+  "license_verified_on": "2026-10-17",
+  "release_performed": false
+}

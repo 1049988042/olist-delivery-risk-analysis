@@ -1,0 +1,10 @@
+﻿field,orders,missing,used_for_ranking
+week,8248,0,False
+customer_state,8248,0,True
+order_age_days,8248,0,True
+handoff_observed,8248,0,True
+stage_age_days,8248,0,True
+item_value,8248,628,False
+freight,8248,628,False
+item_count,8248,628,False
+seller_count,8248,628,False

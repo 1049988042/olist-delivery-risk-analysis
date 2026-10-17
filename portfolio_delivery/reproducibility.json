@@ -1,0 +1,266 @@
+{
+  "status": "passed",
+  "run_directory": ".repro_runs/portfolio_20261017_185853",
+  "source_copies": [
+    "olist_customers_dataset.csv",
+    "olist_geolocation_dataset.csv",
+    "olist_order_items_dataset.csv",
+    "olist_order_payments_dataset.csv",
+    "olist_order_reviews_dataset.csv",
+    "olist_orders_dataset.csv",
+    "olist_products_dataset.csv",
+    "olist_sellers_dataset.csv",
+    "product_category_name_translation.csv",
+    "audit_olist.py",
+    "run_project.py",
+    "deep_audit.py",
+    "review_timing_study.py",
+    "build_review_timing_report.py"
+  ],
+  "new_virtual_environment": true,
+  "system_site_packages": false,
+  "audit_deps_copied": false,
+  "commands": [
+    {
+      "step": "pinned_install",
+      "command": [
+        "<fresh-venv-python>",
+        "-X",
+        "utf8",
+        "-m",
+        "pip",
+        "install",
+        "-r",
+        "D:\\DataAnalysis\\Olist\\requirements-repro.txt",
+        "-c",
+        "D:\\DataAnalysis\\Olist\\final_delivery\\environment.freeze.txt"
+      ],
+      "exit_code": 0,
+      "seconds": 139.276,
+      "stderr_nonempty": false,
+      "logs": ".repro_runs/portfolio_20261017_185853/logs/pinned_install"
+    },
+    {
+      "step": "pip_check",
+      "command": [
+        "<fresh-venv-python>",
+        "-X",
+        "utf8",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.781,
+      "stderr_nonempty": false,
+      "logs": ".repro_runs/portfolio_20261017_185853/logs/pip_check"
+    },
+    {
+      "step": "environment_probe",
+      "command": [
+        "<fresh-venv-python>",
+        "-X",
+        "utf8",
+        "-c",
+        "import sys,site,json,statsmodels,pandas,numpy; print(json.dumps({'python':sys.version,'prefix':sys.prefix,'base_prefix':sys.base_prefix,'enable_user_site':site.ENABLE_USER_SITE,'statsmodels_file':statsmodels.__file__,'pandas_file':pandas.__file__,'numpy_file':numpy.__file__}))"
+      ],
+      "exit_code": 0,
+      "seconds": 3.231,
+      "stderr_nonempty": false,
+      "logs": ".repro_runs/portfolio_20261017_185853/logs/environment_probe"
+    },
+    {
+      "step": "pip_freeze",
+      "command": [
+        "<fresh-venv-python>",
+        "-X",
+        "utf8",
+        "-m",
+        "pip",
+        "freeze"
+      ],
+      "exit_code": 0,
+      "seconds": 0.646,
+      "stderr_nonempty": false,
+      "logs": ".repro_runs/portfolio_20261017_185853/logs/pip_freeze"
+    },
+    {
+      "step": "data_audit",
+      "command": [
+        "<fresh-venv-python>",
+        "-X",
+        "utf8",
+        "audit_olist.py"
+      ],
+      "exit_code": 0,
+      "seconds": 11.348,
+      "stderr_nonempty": false,
+      "logs": ".repro_runs/portfolio_20261017_185853/logs/data_audit"
+    },
+    {
+      "step": "baseline",
+      "command": [
+        "<fresh-venv-python>",
+        "-X",
+        "utf8",
+        "run_project.py"
+      ],
+      "exit_code": 0,
+      "seconds": 163.724,
+      "stderr_nonempty": false,
+      "logs": ".repro_runs/portfolio_20261017_185853/logs/baseline"
+    },
+    {
+      "step": "statistical_audit",
+      "command": [
+        "<fresh-venv-python>",
+        "-X",
+        "utf8",
+        "deep_audit.py"
+      ],
+      "exit_code": 0,
+      "seconds": 39.746,
+      "stderr_nonempty": false,
+      "logs": ".repro_runs/portfolio_20261017_185853/logs/statistical_audit"
+    },
+    {
+      "step": "review_timing",
+      "command": [
+        "<fresh-venv-python>",
+        "-X",
+        "utf8",
+        "review_timing_study.py"
+      ],
+      "exit_code": 0,
+      "seconds": 19.907,
+      "stderr_nonempty": false,
+      "logs": ".repro_runs/portfolio_20261017_185853/logs/review_timing"
+    },
+    {
+      "step": "priority_backtest",
+      "command": [
+        "<fresh-venv-python>",
+        "-X",
+        "utf8",
+        "decision_study/priority_study.py"
+      ],
+      "exit_code": 0,
+      "seconds": 56.524,
+      "stderr_nonempty": false,
+      "logs": ".repro_runs/portfolio_20261017_185853/logs/priority_backtest"
+    },
+    {
+      "step": "aggregate_csv_comparison",
+      "command": [
+        "<fresh-venv-python>",
+        "-X",
+        "utf8",
+        "-c",
+        "\nfrom pathlib import Path\nimport json,pandas as pd\nroot=Path('D:\\\\DataAnalysis\\\\Olist');work=Path.cwd();rows=[]\nfor directory in ['project','deep_study','review_timing_study','decision_study']:\n for ref in sorted((root/directory).glob('*.csv')):\n  if ref.name=='sequence_flag_evidence.csv':continue\n  rel=ref.relative_to(root);actual=work/rel\n  assert actual.exists(),str(rel)\n  pd.testing.assert_frame_equal(pd.read_csv(ref),pd.read_csv(actual),check_dtype=False,check_exact=False,rtol=1e-4,atol=1e-6)\n  rows.append(rel.as_posix())\nprint(json.dumps(rows))\n"
+      ],
+      "exit_code": 0,
+      "seconds": 0.697,
+      "stderr_nonempty": false,
+      "logs": ".repro_runs/portfolio_20261017_185853/logs/aggregate_csv_comparison"
+    }
+  ],
+  "platform": "win32",
+  "python_host": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "rtol": 0.0001,
+  "atol": 1e-06,
+  "scope": "Rerun existing analyses, no new research; isolated code+CSV simulation, not remote Git clone",
+  "limitations": [
+    "Windows/Python 3.12 execution only",
+    "Historical handwritten reports are preserved, not automatically regenerated",
+    "Fonts/PNG byte identity and source-system truth not validated",
+    "No experiment, deployment or realized customer-service benefit"
+  ],
+  "environment_probe": {
+    "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+    "prefix": "D:\\DataAnalysis\\Olist\\.repro_runs\\portfolio_20261017_185853\\.venv",
+    "base_prefix": "D:\\python",
+    "enable_user_site": false,
+    "statsmodels_file": "D:\\DataAnalysis\\Olist\\.repro_runs\\portfolio_20261017_185853\\.venv\\Lib\\site-packages\\statsmodels\\__init__.py",
+    "pandas_file": "D:\\DataAnalysis\\Olist\\.repro_runs\\portfolio_20261017_185853\\.venv\\Lib\\site-packages\\pandas\\__init__.py",
+    "numpy_file": "D:\\DataAnalysis\\Olist\\.repro_runs\\portfolio_20261017_185853\\.venv\\Lib\\site-packages\\numpy\\__init__.py"
+  },
+  "compared_json": [
+    "project/metrics.json",
+    "deep_study/deep_metrics.json",
+    "review_timing_study/timing_metrics.json",
+    "audit vs public audit_reference.json",
+    "decision_study/priority_metrics.json: all scientific and audit fields"
+  ],
+  "compared_csv": [
+    "project/categories_single.csv",
+    "project/late_groups.csv",
+    "project/monthly.csv",
+    "project/regions.csv",
+    "project/sellers_single.csv",
+    "deep_study/category_priority_strict.csv",
+    "deep_study/delay_gradient.csv",
+    "deep_study/region_priority.csv",
+    "deep_study/review_timing_cross.csv",
+    "deep_study/shipping_limit_stage.csv",
+    "deep_study/stage_by_late.csv",
+    "deep_study/state_lane_priority.csv",
+    "review_timing_study/delivery_timing_sensitivity.csv",
+    "review_timing_study/final_delivery_presence_groups.csv",
+    "review_timing_study/landmark_final_status_context.csv",
+    "review_timing_study/landmark_future_first_review_30d.csv",
+    "review_timing_study/landmark_monthly.csv",
+    "review_timing_study/missing_delivery_and_final_status.csv",
+    "review_timing_study/nonmidnight_creation_dates.csv",
+    "review_timing_study/original_final_delay_vs_review_state.csv",
+    "review_timing_study/promise_boundary_sensitivity.csv",
+    "review_timing_study/review_time_states_first.csv",
+    "review_timing_study/review_time_states_latest.csv",
+    "review_timing_study/review_time_states_original_sample.csv",
+    "review_timing_study/sequence_flag_sensitivity.csv",
+    "review_timing_study/sql_crosscheck.csv",
+    "review_timing_study/sql_landmark_crosscheck.csv",
+    "review_timing_study/survey_trigger_date_offsets.csv",
+    "review_timing_study/timestamp_precision.csv",
+    "decision_study/allocation_crosscheck_and_outcome_context.csv",
+    "decision_study/cohort_stage_profile.csv",
+    "decision_study/complexity_increment.csv",
+    "decision_study/daily_queue_and_capacity.csv",
+    "decision_study/development_validation.csv",
+    "decision_study/feature_availability.csv",
+    "decision_study/final_status_outcome_audit_not_features.csv",
+    "decision_study/priority_backtest.csv",
+    "decision_study/separate_landmark_sensitivity.csv",
+    "decision_study/sql_crosscheck.csv",
+    "decision_study/test_subperiods.csv",
+    "decision_study/threshold_sensitivity.csv",
+    "decision_study/training_group_support.csv"
+  ],
+  "regenerated_figures": [
+    "project/figures/late_bad_rate.png",
+    "project/figures/monthly_rates.png",
+    "project/figures/region_late_rate.png",
+    "deep_study/delay_gradient.png",
+    "review_timing_study/review_time_states.png",
+    "decision_study/paired_increment.png",
+    "decision_study/risk_coverage.png"
+  ],
+  "frozen_rules_sha256_equal": true,
+  "historical_analysis_files_unchanged": 101,
+  "raw_csv_hashes_unchanged": 9,
+  "excluded_comparisons": [
+    "Optimization iteration counts, tiny score gradients, condition numbers",
+    "Decision metrics environment, elapsed time and historical footprint count",
+    "Per-order sequence evidence not needed in public reference"
+  ],
+  "source_sha256": {
+    "olist_customers_dataset.csv": "983a422239e1712ded753b3bf9ecf47dc73f144d306029dcfa99e70a226883d2",
+    "olist_geolocation_dataset.csv": "b514f6fc991b9566aeba02aa5d67e2c3630f034b60a0e05aa0d082a3b66d88d6",
+    "olist_order_items_dataset.csv": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279",
+    "olist_order_payments_dataset.csv": "4f713964f2815dbbaa40b9488268c55aac3627bfce5aa96cf58d1f3616de3cc0",
+    "olist_order_reviews_dataset.csv": "012b61c7593e34f51fa614efdf802b9c7056ce6aae5307ddb93236e7cfc797d7",
+    "olist_orders_dataset.csv": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf",
+    "olist_products_dataset.csv": "3e6569628a17fbc75fd206ee357b59e20364b9afa90f5b6cd5b4d624c58aa9cc",
+    "olist_sellers_dataset.csv": "1f643d2b950373b85735e7794b20986f528d7a000432e7c6f9bcbb44d0846a0e",
+    "product_category_name_translation.csv": "a81f0d1f27b27e7293f761bc79e3ce8f348ee39c4b3ed3e49bde38f478586278"
+  }
+}

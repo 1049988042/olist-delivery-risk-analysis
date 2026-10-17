@@ -1,0 +1,6 @@
+﻿state,final_late,orders,bad_orders
+delivered_late,True,1908,371
+delivered_on_time,False,89263,8258
+pending_overdue,True,4429,3600
+pending_within_promise,False,180,31
+pending_within_promise,True,44,12
